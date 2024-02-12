@@ -1,8 +1,4 @@
-# topology documentation: xxx 
-#
-# requires "sudo ovs-vsctl add-br switch1 || sudo ovs-vsctl add-br switch2" to be
-# run before the topology is started
-#
+# troubleshooting example
 
 name: kommprot-lab-tshoot
 

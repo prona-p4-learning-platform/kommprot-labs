@@ -1,13 +1,6 @@
-# topology documentation: xxx 
+# simple topology with three linux hosts based on Alpine Linux augmented with common network tools
 #
-# add ip to host1:
-#   ip addr add 192.168.188.100/24 dev eth1
-#
-# add ip to host2:
-#   ip addr add 192.168.189.100/24 dev eth1
-#
-# add snat to router1:
-#   iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE 
+# nodes are connecteced in a linear form, while the node in the middle acts as a gateway/router.
 
 name: kommprot-lab-simple
 

@@ -1,12 +1,4 @@
-# topology documentation: xxx 
-#
-# requires "sudo ovs-vsctl add-br switch1 || sudo ovs-vsctl add-br switch2 || sudo ovs-vsctl add-br switch3" to be
-# run before the topology is started
-# 
-# set STP: "for NUMBER in $(seq 1 3); do sudo ovs-vsctl set bridge switch$NUMBER stp_enable=true; done"
-# show stp state: "sudo ovs-appctl stp/show"
-#
-#
+# switching example with spanning-tree using OpenVSwitch (OVS)
 
 name: kommprot-lab-stp
 
