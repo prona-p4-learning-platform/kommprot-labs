@@ -1,0 +1,30 @@
+# simple topology with three linux hosts based on Alpine Linux augmented with common network tools
+#
+# nodes are connecteced in a linear form, while the node in the middle acts as a gateway/router.
+
+name: kommprot-lab-simple
+
+topology:
+  kinds:
+    linux:
+      image: wbitt/network-multitool:alpine-extra
+  nodes:
+    host1:
+      kind: linux
+      group: hosts
+      exec:
+        - ip route del default
+    router1:
+      kind: linux
+      exec:
+        - ip addr add 192.168.188.1/24 dev eth1
+        - ip addr add 192.168.189.1/24 dev eth2
+    host2:
+      kind: linux
+      group: hosts
+      exec:
+        - ip route del default
+
+  links:
+    - endpoints: ["host1:eth1", "router1:eth1"]
+    - endpoints: ["host2:eth1", "router1:eth2"]

@@ -1,0 +1,22 @@
+# simple topology two directly connected linux hosts based on Alpine Linux augmented with common network tools
+
+name: kommprot-lab-transport
+
+topology:
+  kinds:
+    linux:
+      image: wbitt/network-multitool:alpine-extra
+  nodes:
+    host1:
+      kind: linux
+      group: hosts
+      exec:
+        - touch /tmp/hello-world
+    host2:
+      kind: linux
+      group: hosts
+      exec:
+        - touch /tmp/hello-world
+
+  links:
+    - endpoints: ["host1:eth1", "host2:eth1"]
