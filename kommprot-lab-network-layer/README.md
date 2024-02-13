@@ -10,7 +10,7 @@
   * ip addr add 192.168.189.100/24 dev eth1
 
 
-## Task 1: add routes to reach host1 from host2 and vive-versa
+## Task 1: add routes to reach host1 from host2 and vice-versa
 
 * host1:
   * ping 192.168.188.1 (test reachability of gateway...), arp -an?
