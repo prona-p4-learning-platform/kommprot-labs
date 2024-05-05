@@ -1,4 +1,4 @@
-# application layer exercise
+# application layer exercise -> base topology
 
 name: kommprot-lab-application
 
@@ -32,32 +32,32 @@ topology:
       image: alpine:latest
       group: hosts
       exec:
-        - ip addr add 192.168.1.10/24 dev eth1
+        #- ip addr add 192.168.188.100/24 dev eth1
         - apk add dhcpcd
         - apk add lftp
         - apk add nano
         - apk add iperf3
         - apk add openjdk11
-        - sed -i '/# A sample configuration for dhcpcd\./a\denyinterfaces eth0' /etc/dhcpcd.conf
         - sed -i 's/#hostname/hostname/' /etc/dhcpcd.conf
         #- ip route del default
         #- ip route add default via 192.168.188.1
+        - dhcpcd eth1
 
     host2:
       kind: linux
-      #image: alpine:latest
-      #image: delfer/alpine-ftp-server
       group: hosts
       exec:
-        - ip addr add 192.168.188.101/24 dev eth1
+        #- ip addr add 192.168.188.101/24 dev eth1
         - apk add dhcpcd
         - apk add nano 
         - apk add openjdk11
+        - sed -i 's/#hostname/hostname/' /etc/dhcpcd.conf
         #- iperf3 -s #start iperf3 Server
         #- apk add vsftpd
         #- ip route del default
         #- ip route add default via 192.168.188.1
-
+        - dhcpcd eth1
+        
     server1:
       kind: linux
       binds:
@@ -66,9 +66,6 @@ topology:
         - ip addr add 192.168.188.1/24 dev eth1
         - apk add dnsmasq
         - dnsmasq
-        #- rc-service dnsmasq start && rc-update add dnsmasq
-        #- ip route del default
-        #- ip route add default via 192.168.11.2
     
 
   links:
