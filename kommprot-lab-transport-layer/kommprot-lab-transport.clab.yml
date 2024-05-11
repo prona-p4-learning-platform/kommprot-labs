@@ -11,12 +11,12 @@ topology:
       kind: linux
       group: hosts
       exec:
-        - touch /tmp/hello-world
+        - apk add openjdk17
     host2:
       kind: linux
       group: hosts
       exec:
-        - touch /tmp/hello-world
+        - apk add openjdk17
 
   links:
     - endpoints: ["host1:eth1", "host2:eth1"]
