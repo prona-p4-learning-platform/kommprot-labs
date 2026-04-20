@@ -6,7 +6,7 @@ Dieses Dokument liefert technische Hinweise und Konzepte für die Lösung der Au
 1. Alpine Linux verwendet `apk`. Nutzen sie die Flag `-h`, um den genauen Befehl zur Installation eines Pakets zu finden.
 2. Der SSH Server verweigert den Start ohne eigene SSH-Keys. Nutzen sie das Tool `ssh-keygen` mit der korrekten Flag `-A`, um alle fehlenden Host Keys des Systems generieren zu lassen.
 3. Sie müssen den SSH-Server nun starten. Die ausführbare Datei liegt in `/usr/sbin/` und heißt `sshd`.
-4. Verbinden sie sich nun mit dem Server über den Client. Der Syntax für SSH lautet: `ssh <user>@<hostname or ip>`
+4. Verbinden sie sich nun mit dem Server über den Client. Der Syntax für SSH lautet: `ssh <user>@<hostname or ip>`. Die IP beider Container können sie über den Befehl `ifconfig` herausfinden. Die IPs beginnen mit `172.x.x.x`.
 4. Generieren sie nun auf dem Client ein eigenes Schlüsselpaar. Dort ist die `-A` Flag nicht notwendig.
 5. Der öffentliche Schlüssel ihres Clients muss auf den Server übertragen werden. Kopieren sie sich den Inhalt des öffentlichen Schlüssels in ihre Zwischenablage. Der Inhalt dieses Schlüssels muss in der Datei `authorized_keys` auf dem Server hinterlegt sein. Diese befindet sich im Verzeichnis `/root/.ssh/`. Falls diese nicht existiert, erstellen sie diese.
 6. Verbinden sie sich nun vom Client aus mit dem Server, indem sie ihren privaten Schlüssel als Argument übergeben. Nutzen sie dafür die Flag `-i` mit dem Dateipfad des privaten Schlüssels.
