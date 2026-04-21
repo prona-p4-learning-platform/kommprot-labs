@@ -20,7 +20,7 @@ Host <alias>
 
 ## Aufgabe 4
 
-1. Die Nutzung von SCP setzt einen aktiven SSH-Server voraus mit hinterlegten Keys voraus. Falls sie direkt mit dieser Aufgabe nach der vorigen fortfahren, können sie diesen weiter verwenden. Andernfalls müssen sie erneut einen SSH-Server und -Client aufsetzen.
+1. Die Nutzung von SCP setzt einen aktiven SSH-Server mit hinterlegten Keys voraus. Falls sie direkt mit dieser Aufgabe nach der vorigen fortfahren, können sie diesen weiter verwenden. Andernfalls müssen sie erneut einen SSH-Server und -Client aufsetzen.
 2. Sie müssen bei SCP ebenfalls mit Keypairs arbeiten. Falls sie einen Alias mithilfe der SSH-Config aufgesetzt haben, können sie diesen verwenden. Andernfalls müssen sie erneut das Keypair mit der Flag `-i` angeben.
 3. Der Syntax, um eine Datei von Lokal auf Remote zu kopieren, lautet: `scp <args> <path-to-file> <user>@<hostname or ip>:<path-to-file>`.
 4. Um eine Datei von Remote auf Lokal zu kopieren, tauschen sie die Blöcke `<path-to-file>` und `<user>@<hostname or ip>:<path-to-file>` .
